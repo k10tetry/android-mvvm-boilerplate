@@ -8,4 +8,8 @@ open class BaseViewModel(
     val schedulerProvider: SchedulerProvider,
     val compositeDisposable: CompositeDisposable
 ) : ViewModel() {
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.dispose()
+    }
 }

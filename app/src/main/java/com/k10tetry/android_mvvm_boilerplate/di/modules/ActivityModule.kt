@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.k10tetry.android_mvvm_boilerplate.data.remote.api.ApiService
-import com.k10tetry.android_mvvm_boilerplate.di.ViewModelProviderFactory
+import com.k10tetry.android_mvvm_boilerplate.di.ViewModelFactory
 import com.k10tetry.android_mvvm_boilerplate.di.qualifiers.ActivityContext
 import com.k10tetry.android_mvvm_boilerplate.di.scopes.PerActivity
 import com.k10tetry.android_mvvm_boilerplate.ui.main.MainViewModel
@@ -63,7 +63,7 @@ class ActivityModule(private val activity: AppCompatActivity) {
                 )
             }
         val viewModelProviderFactory =
-            ViewModelProviderFactory(MainViewModel::class.java, provider);
+            ViewModelFactory(MainViewModel::class.java, provider);
         return ViewModelProvider(activity, viewModelProviderFactory).get(MainViewModel::class.java)
     }
 
